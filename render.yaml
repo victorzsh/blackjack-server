@@ -1,0 +1,8 @@
+services:
+  - name: blackjack-server
+    runtime: node
+    buildCommand: "npm install"
+    startCommand: "node server.js"
+    env:
+      - key: PORT
+        value: 4000
