@@ -1,9 +1,10 @@
+project: blackjack-server
 services:
-  - type: web
-    name: blackjack-server
-    runtime: node
-    envVars:
-      - key: PORT
-        value: 4000
+  - name: blackjack-server
+    startCommand: "node server.ts"
     buildCommand: "npm install"
-    startCommand: "node server.js"
+    healthCheckPath: "/"
+    port: 4000
+    environment:
+      NODE_ENV: "production"
+      PORT: 4000
